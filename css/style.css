@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background:linear-gradient(#200016,#10001f);
+    min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+}
+
+.header .container {
+    color: white;
+    height: 97px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-left: 30px;
+    margin-right: 30px;
+
+    width: 90%;
+    position: fixed;
+    z-index: 100;
+}
+
+.header .container .logo {
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.header .container .links ul {
+    display: flex;
+    text-transform: capitalize;
+}
+.header .container .links ul li {
+    margin-right: 5px;
+    padding: 5px 20px;
+    user-select: none;
+}
+
+.header .container .links ul li:hover,
+.header .container .links ul li:first-child {
+    background-color: white;
+    color: #200016;
+    border-radius: 10px;
+}
+
+@media (max-width:767px) {
+    .header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header .container .logo {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .header .container .logo h3 {
+        font-size: 15px;
+    }
+
+    .header .container .links {
+        margin-top: -20px;
+        font-size: 10px;
+        
+    }
+    .header .container .links ul li {
+        padding: 2px 5px;
+    }
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.main .container .box img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+} 
+
+#moon2 {
+    /* this results in a brighter image where the overlapping parts are lightened. */
+    mix-blend-mode: screen;
+    /* to be confirm with screen */
+}
+
+.main::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top , #10001f , transparent);
+}
+
+.content-info {
+    color: white;
+    padding: 20px;
+}
+
+.content-info h3 {
+    margin: 20px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.content-info p {
+    margin: 30px;
+    line-height: 1.6;
+}
+
+@media (max-width:787px) {
+    .content-info {
+        font-size: 14px;
+    }
+}
